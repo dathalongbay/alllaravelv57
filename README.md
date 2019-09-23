@@ -9,3 +9,6 @@
 ### để tạo ra 1 bảng thì sẽ phải tạo ra 1 migration mới 
 ### lệnh đó là : php artisan make:migration create_students_table
 
+### muốn chuyển tất cả các migrations đã có trong laravel thành table trong CSDL thì làm thế nào ?
+### gõ lệnh : php artisan migrate
+
