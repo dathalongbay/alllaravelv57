@@ -85,6 +85,7 @@ Route::get("/haiphong", "HaiPhongController@quanlechan");
 Route::get("/thanhhoa", "Province\ThanhhoaController@biensamson");
 
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
