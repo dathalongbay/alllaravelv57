@@ -12,3 +12,7 @@
 ### muốn chuyển tất cả các migrations đã có trong laravel thành table trong CSDL thì làm thế nào ?
 ### gõ lệnh : php artisan migrate
 
+### nếu gặp lỗi thì sẽ : app/Providers/AppServiceProvider.php
+### thêm dòng Schema::defaultStringLength(191); này vào trong phương thức public function boot()
+### nhớ là phải import namespace use Illuminate\Support\Facades\Schema;
+
