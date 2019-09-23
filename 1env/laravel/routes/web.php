@@ -85,6 +85,18 @@ Route::get("/haiphong", "HaiPhongController@quanlechan");
 Route::get("/thanhhoa", "Province\ThanhhoaController@biensamson");
 
 
+Route::get('/testlayouthanoi', function () {
+    return view('contentviews.hanoi');
+});
+
+Route::get('/testlayoutdanang', function () {
+    return view('contentviews.danang');
+});
+
+Route::get('/testlayouthochiminh', function () {
+    return view('contentviews.hochiminh');
+});
+
 
 Auth::routes();
 
