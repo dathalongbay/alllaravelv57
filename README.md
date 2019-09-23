@@ -19,3 +19,10 @@
 ### tạo ra 1 migration mà tên bảng là : locations chứa các tỉnh thành vn : location_name ( text ) , location_gpd ( text ) 
 ### 1 - php artisan make:migration create_XXXXX_table
 ### 2 - php artisan migrate
+
+### router trong laravel nằm trong đường dẫn routes/web.php
+### đây là 1 cái file chứa điều hướng giữa link url và controller hoặc hàm xử lý khi mà truy cập vào url đó
+### url trang chủ mặc định là /
+### Route::get('/', function () {
+ ###   return view('welcome');
+###  });
