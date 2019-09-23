@@ -16,3 +16,7 @@
 ### thêm dòng Schema::defaultStringLength(191); này vào trong phương thức public function boot()
 ### nhớ là phải import namespace use Illuminate\Support\Facades\Schema;
 
+### tạo ra 1 migration mà tên bảng là : locations chứa các tỉnh thành vn : location_name ( text ) , location_gpd ( text ) 
+### 1 - php artisan make:migration create_students_table
+### 2 - php artisan migrate
+
