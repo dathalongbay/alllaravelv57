@@ -26,3 +26,6 @@
 ### Route::get('/', function () {
  ###   return view('welcome');
 ###  });
+
+### ở đây mình hiểu là khi vào đường dẫn / thì laravel sẽ trả về view welcome
+### nhưng view welcome này nằm ở đâu ? nằm resources/view/welcome.blade.php
