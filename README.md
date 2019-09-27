@@ -29,3 +29,13 @@
 
 ### ở đây mình hiểu là khi vào đường dẫn / thì laravel sẽ trả về view welcome
 ### nhưng view welcome này nằm ở đâu ? nằm resources/view/welcome.blade.php
+
+### câu lệnh artisan để tạo 1 controller
+### php artisan make:controller têncontroller
+### ví dụ : php artisan make:controller VietnamController
+
+### câu lệnh laravel để tạo 1 model
+### php artisan make:model tênmodel
+### ví dụ : php artisan make:model Models/VietnamModel
+
+
