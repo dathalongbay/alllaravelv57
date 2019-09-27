@@ -98,6 +98,7 @@ Route::get('/testlayouthochiminh', function () {
 });
 
 Route::get("/china", "ChinaController@index");
+Route::get("/malaysia", "MalaysiaController@index");
 
 
 Auth::routes();
