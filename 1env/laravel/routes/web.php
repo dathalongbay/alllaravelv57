@@ -97,6 +97,8 @@ Route::get('/testlayouthochiminh', function () {
     return view('contentviews.hochiminh');
 });
 
+Route::get("/china", "ChinaController@index");
+
 
 Auth::routes();
 
