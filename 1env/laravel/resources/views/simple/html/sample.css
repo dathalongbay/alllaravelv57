@@ -1,0 +1,36 @@
+header {
+    padding: 70px;
+    background: deepskyblue;
+}
+
+#navigation {
+    padding: 20px;
+    background: yellow;
+
+}
+
+#navigation ul li {
+    display: inline-block;
+}
+
+#main {
+    overflow: auto;
+}
+
+#main aside {
+    background: green;
+    width: 200px;
+    padding: 30px;
+    float: left;
+}
+
+#main article {
+    background: violet;
+    padding: 30px;
+    float: right;
+}
+
+footer {
+    padding: 70px;
+    background: deepskyblue;
+}
