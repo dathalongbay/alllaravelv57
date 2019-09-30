@@ -101,6 +101,28 @@ Route::get("/china", "ChinaController@index");
 Route::get("/malaysia", "MalaysiaController@index");
 Route::get("/japan", "JapanController@index");
 
+/*Route::get("/test/1", function (){
+    return view("test.1");
+});
+
+
+Route::get("/test/2", function (){
+    return view("test.2");
+});
+
+Route::get("/test/3", function (){
+    return view("test.3");
+});*/
+
+
+/**
+ * truyền biến từ trên url xuống view
+ * trong link router chuyển chuối thanh biến {tên biến}
+ * truyền biến giữa route và view
+ */
+Route::get("/test/{id}", function ($id){
+    return view("test.$id");
+});
 
 Auth::routes();
 
