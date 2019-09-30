@@ -124,6 +124,11 @@ Route::get("/test/{id}", function ($id){
     return view("test.$id");
 });
 
+
+Route::get('/simpledemo', 'SimpleController@index');
+Route::get('/simpledemo/hanoi', 'SimpleController@hanoi');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
