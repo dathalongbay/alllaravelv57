@@ -125,10 +125,50 @@ Route::get("/test/{id}", function ($id){
 });
 
 
-Route::get('/simpledemo', 'SimpleController@index');
+Route::get('/simpledemo', 'Simple
+Controller@index');
 Route::get('/simpledemo/hanoi', 'SimpleController@hanoi');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/**
+ * truyền dữ liệu của biến từ url xuống function của router
+ * biến trên url sẽ nằm trong {}
+ * vd {action} hoặc {id}
+ * {action}/{id} là bắt buộc phải có trên url
+ * vd : http://localhost/alllaravelv57/1env/laravel/public/testroute/bathiet/7
+ * nếu không truyền biến trên url thì sẽ bị đá về trang 404
+ */
+Route::get("/testroute/{action}/{id}", function ($action, $id){
+    echo "<br>" . "test truyền biến từ route xuống callback của route";
+    echo "<br>";
+    var_dump($action);
+    echo "<br>";
+    var_dump($id);
+});
+
+/**
+ * thêm dấu ? đằng sau tên biến để ko bắt buộc khi truyền từ url'
+ * vd : {action?}/{id?}
+ * đồng thời phải gán gia trị mặc định khi tạo tham số của hàm callback trong route
+ */
+Route::get("/testroute2/{action?}/{id?}", function ($action = "mặc định", $id = "mặc định"){
+    echo "<br>" . "test truyền biến từ route xuống callback của route";
+    echo "<br>";
+    var_dump($action);
+    echo "<br>";
+    var_dump($id);
+});
+
+/**
+ * truyền biến từ trên url xuống controller
+ * khai báo biến trong url route
+ * {bien1} bắt buộc
+ * {bien2?}/{bien3?} có dấu ? thì sẽ không bắt buộc
+ */
+Route::get("/category/{bien1}/{bien2?}/{bien3?}", "CategoryController@index");
+
+
