@@ -42,8 +42,24 @@ class CategoryController extends Controller
         return view("request.create");
     }
 
-    public function store(Request $request) {
+    public function login(Request $request) {
 
+        /**
+         * lấy all data từ form
+         */
+        $input = $request->all();
+        echo "<pre>";
+        print_r($input);
+        echo "</pre>";
+
+        // lấy 1 input cụ thể
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        var_dump($email);
+        var_dump($password);
+
+        echo "thành công"; die;
 
 
     }

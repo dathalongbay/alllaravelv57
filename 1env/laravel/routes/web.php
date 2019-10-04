@@ -172,3 +172,7 @@ Route::get("/testroute2/{action?}/{id?}", function ($action = "mặc định", $
 Route::get("/category/{bien1}/{bien2?}/{bien3?}", "CategoryController@index");
 
 
+Route::get("/requestpost/login", "CategoryController@create");
+Route::post("/requestpost/login", "CategoryController@login");
+
+
