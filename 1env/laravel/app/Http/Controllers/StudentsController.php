@@ -9,8 +9,16 @@ class StudentsController extends Controller
 {
     //
 
-    public function index() {
+    public function index($action) {
 
+       if ($action != "") {
+           $this->$action();
+       }
+    }
+
+    public function index1() {
+
+        echo "<br>" . __METHOD__;
         $users = DB::select('select * from users');
 
         echo "<pre>";
@@ -23,5 +31,22 @@ class StudentsController extends Controller
         }
 
         die;
+    }
+
+    public function index2() {
+
+        echo "<br>" . __METHOD__;
+        $users = DB::table('users')->get();
+
+        /**
+         *
+         * Illuminate\Support\Collection Object
+         */
+
+        echo "<pre>";
+        print_r($users);
+        echo "</pre>";
+        die;
+
     }
 }

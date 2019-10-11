@@ -178,6 +178,6 @@ Route::post("/requestpost/login", "CategoryController@login");
 /**
  *
  */
-Route::get("/db/index", "StudentsController@index");
+Route::get("/db/{action}", "StudentsController@index");
 
 
