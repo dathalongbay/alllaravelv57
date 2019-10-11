@@ -175,4 +175,9 @@ Route::get("/category/{bien1}/{bien2?}/{bien3?}", "CategoryController@index");
 Route::get("/requestpost/login", "CategoryController@create");
 Route::post("/requestpost/login", "CategoryController@login");
 
+/**
+ *
+ */
+Route::get("/db/index", "StudentsController@index");
+
 
