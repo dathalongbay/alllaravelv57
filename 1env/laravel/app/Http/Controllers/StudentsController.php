@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StudentsModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -189,6 +190,55 @@ class StudentsController extends Controller
     }
 
 
+    public function index14() {
+
+
+        // khởi tạo model ORM
+        $studentModel = new StudentsModel();
+        $table = $studentModel->getTable();
+
+         echo "<br>" . __FILE__ . " --- debug ----";
+         echo "<pre>";
+         print_r($table);
+         echo "</pre>";
+         die;
+    }
+
+    public function index15() {
+
+        // lấy ra tất cả các bản ghi trong bảng students
+        $students = StudentsModel::all();
+        echo "<br>" . __FILE__ . " --- debug ----";
+        echo "<pre>";
+        print_r($students);
+        echo "</pre>";
+        die;
+    }
+
+    public function index16() {
+
+        // lấy ra tất cả các bản ghi trong bảng students
+        $students = StudentsModel::all();
+        foreach($students as $student) {
+            echo "<br>". $student->id . " -- " . $student->student_name;
+        }
+        die;
+    }
+
+
+
+    public function index17() {
+
+        // lấy ra tất cả các bản ghi trong bảng students
+        $students = StudentsModel::where('id',">", 5)
+            ->orderBy('id', 'asc')
+            ->take(10)
+            ->get();
+        foreach($students as $student) {
+            echo "<br>". $student->id . " -- " . $student->student_name;
+        }
+        die;
+    }
     
     
 
