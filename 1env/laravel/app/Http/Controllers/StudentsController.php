@@ -145,4 +145,51 @@ class StudentsController extends Controller
         die;
 
     }
+
+    /** thêm vào trong db */
+    public function index10() {
+
+
+        DB::table('students')->insert(
+            ['student_name' => 'nguyen van an', 'student_location' => "ha noi"]
+        );
+
+    }
+
+    /**
+     * thêm nhiều bản ghi 1 lúc
+     */
+    public function index11() {
+
+
+        DB::table('students')->insert([
+            ['student_name' => 'nguyen van b', 'student_location' => "ha noi"],
+            ['student_name' => 'nguyen van c', 'student_location' => "bac ninh"],
+            ['student_name' => 'nguyen van d', 'student_location' => "bac giang"],
+            ['student_name' => 'nguyen van e', 'student_location' => "nam dinh"],
+            ['student_name' => 'nguyen van f', 'student_location' => "ha nam"]
+        ]);
+
+    }
+
+    /**
+     * cập nhật db
+     */
+    public function index12() {
+        DB::table('students')
+            ->where('id', 1)
+            ->update(['student_name' => "demo update", "student_location" => "ho chi minh"]);
+    }
+
+    /**
+     * xóa dữ liệu db
+     */
+    public function index13() {
+        DB::table('students')->where('id', '>', 20)->delete();
+    }
+
+
+    
+    
+
 }
