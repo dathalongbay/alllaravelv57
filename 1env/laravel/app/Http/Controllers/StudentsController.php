@@ -263,4 +263,25 @@ class StudentsController extends Controller
         $studentModel->save();
     }
 
+
+    public function index20() {
+
+        StudentsModel::where("id", ">", 5)
+        ->where("id", "<", "10")->update(["student_location"=>"đà nẵng"]);
+
+
+    }
+
+
+    public function index21() {
+        $studentModel = StudentsModel::find(29);
+
+        $studentModel->delete();
+    }
+
+
+    public function index22() {
+        StudentsModel::where("id", ">", 5)
+            ->where("id", "<", "10")->delete();
+    }
 }
