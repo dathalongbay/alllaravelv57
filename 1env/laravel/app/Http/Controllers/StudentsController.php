@@ -31,7 +31,7 @@ class StudentsController extends Controller
             echo "<br> email " . $user->email;
         }
 
-        die;
+        return view("welcome");
     }
 
     public function index2() {
@@ -47,7 +47,8 @@ class StudentsController extends Controller
         echo "<pre>";
         print_r($users);
         echo "</pre>";
-        die;
+
+        return view("welcome");
 
     }
 
@@ -60,7 +61,7 @@ class StudentsController extends Controller
         echo "<pre>";
         print_r($users);
         echo "</pre>";
-        die;
+        return view("welcome");
     }
 
     /**
@@ -72,7 +73,7 @@ class StudentsController extends Controller
         echo "<pre>";
         print_r($users);
         echo "</pre>";
-        die;
+        return view("welcome");
     }
 
     /**
@@ -84,7 +85,7 @@ class StudentsController extends Controller
         echo "<pre>";
         print_r($users);
         echo "</pre>";
-        die;
+        return view("welcome");
     }
 
     public function index6() {
@@ -93,7 +94,7 @@ class StudentsController extends Controller
         echo "<pre>";
         print_r($users);
         echo "</pre>";
-        die;
+        return view("welcome");
     }
 
     public function index7() {
@@ -109,7 +110,7 @@ class StudentsController extends Controller
         echo "<pre>";
         print_r($users);
         echo "</pre>";
-        die;
+        return view("welcome");
 
     }
 
@@ -126,7 +127,7 @@ class StudentsController extends Controller
         echo "<pre>";
         print_r($users);
         echo "</pre>";
-        die;
+        return view("welcome");
 
     }
 
@@ -143,7 +144,7 @@ class StudentsController extends Controller
         echo "<pre>";
         print_r($users);
         echo "</pre>";
-        die;
+        return view("welcome");
 
     }
 
@@ -155,6 +156,7 @@ class StudentsController extends Controller
             ['student_name' => 'nguyen van an', 'student_location' => "ha noi"]
         );
 
+        return view("welcome");
     }
 
     /**
@@ -171,6 +173,8 @@ class StudentsController extends Controller
             ['student_name' => 'nguyen van f', 'student_location' => "ha nam"]
         ]);
 
+        return view("welcome");
+
     }
 
     /**
@@ -180,6 +184,8 @@ class StudentsController extends Controller
         DB::table('students')
             ->where('id', 1)
             ->update(['student_name' => "demo update", "student_location" => "ho chi minh"]);
+
+        return view("welcome");
     }
 
     /**
@@ -187,6 +193,9 @@ class StudentsController extends Controller
      */
     public function index13() {
         DB::table('students')->where('id', '>', 20)->delete();
+
+
+        return view("welcome");
     }
 
 
@@ -201,7 +210,7 @@ class StudentsController extends Controller
          echo "<pre>";
          print_r($table);
          echo "</pre>";
-         die;
+        return view("welcome");
     }
 
     public function index15() {
@@ -212,7 +221,7 @@ class StudentsController extends Controller
         echo "<pre>";
         print_r($students);
         echo "</pre>";
-        die;
+        return view("welcome");
     }
 
     public function index16() {
@@ -222,7 +231,7 @@ class StudentsController extends Controller
         foreach($students as $student) {
             echo "<br>". $student->id . " -- " . $student->student_name;
         }
-        die;
+        return view("welcome");
     }
 
 
@@ -237,7 +246,7 @@ class StudentsController extends Controller
         foreach($students as $student) {
             echo "<br>". $student->id . " -- " . $student->student_name;
         }
-        die;
+        return view("welcome");
     }
 
 
@@ -249,6 +258,9 @@ class StudentsController extends Controller
         $studentModel->student_location = "Location by ORM MODEL";
 
         $studentModel->save();
+
+
+        return view("welcome");
     }
 
 
@@ -261,6 +273,9 @@ class StudentsController extends Controller
         $studentModel->student_location = "Update Location by ORM MODEL";
 
         $studentModel->save();
+
+
+        return view("welcome");
     }
 
 
@@ -270,6 +285,9 @@ class StudentsController extends Controller
         ->where("id", "<", "10")->update(["student_location"=>"đà nẵng"]);
 
 
+        return view("welcome");
+
+
     }
 
 
@@ -277,11 +295,17 @@ class StudentsController extends Controller
         $studentModel = StudentsModel::find(29);
 
         $studentModel->delete();
+
+
+        return view("welcome");
     }
 
 
     public function index22() {
         StudentsModel::where("id", ">", 5)
             ->where("id", "<", "10")->delete();
+
+
+        return view("welcome");
     }
 }
