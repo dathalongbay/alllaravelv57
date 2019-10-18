@@ -239,7 +239,28 @@ class StudentsController extends Controller
         }
         die;
     }
-    
-    
+
+
+    public function index18() {
+
+        $studentModel = new StudentsModel();
+
+        $studentModel->student_name = "Name by ORM MODEL";
+        $studentModel->student_location = "Location by ORM MODEL";
+
+        $studentModel->save();
+    }
+
+
+
+    public function index19() {
+
+        $studentModel = StudentsModel::find(29);
+
+        $studentModel->student_name = "Update Name by ORM MODEL";
+        $studentModel->student_location = "Update Location by ORM MODEL";
+
+        $studentModel->save();
+    }
 
 }
